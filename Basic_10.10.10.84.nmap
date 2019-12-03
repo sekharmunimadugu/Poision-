@@ -1,0 +1,14 @@
+# Nmap 7.80 scan initiated Sat Nov 30 23:28:27 2019 as: nmap -Pn -sCV -p22 -oN nmap/Basic_10.10.10.84.nmap 10.10.10.84
+Nmap scan report for 10.10.10.84
+Host is up (0.19s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2 (FreeBSD 20161230; protocol 2.0)
+| ssh-hostkey: 
+|   2048 e3:3b:7d:3c:8f:4b:8c:f9:cd:7f:d2:3a:ce:2d:ff:bb (RSA)
+|   256 4c:e8:c6:02:bd:fc:83:ff:c9:80:01:54:7d:22:81:72 (ECDSA)
+|_  256 0b:8f:d5:71:85:90:13:85:61:8b:eb:34:13:5f:94:3b (ED25519)
+Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Nov 30 23:28:35 2019 -- 1 IP address (1 host up) scanned in 8.13 seconds

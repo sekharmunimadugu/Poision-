@@ -1,0 +1,56 @@
+# Nmap 7.80 scan initiated Sat Nov 30 23:45:52 2019 as: nmap -Pn -sV --script vuln -p22,80, -oN nmap/Vulns_10.10.10.84.nmap 10.10.10.84
+Nmap scan report for 10.10.10.84
+Host is up (0.17s latency).
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.2 (FreeBSD 20161230; protocol 2.0)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:openbsd:openssh:7.2: 
+|     	CVE-2016-8858	7.8	https://vulners.com/cve/CVE-2016-8858
+|     	CVE-2018-15919	5.0	https://vulners.com/cve/CVE-2018-15919
+|     	CVE-2017-15906	5.0	https://vulners.com/cve/CVE-2017-15906
+|_    	CVE-2016-10708	5.0	https://vulners.com/cve/CVE-2016-10708
+80/tcp open  http    Apache httpd 2.4.29 ((FreeBSD) PHP/5.6.32)
+|_clamav-exec: ERROR: Script execution failed (use -d to debug)
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.10.84
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://10.10.10.84:80/
+|     Form id: 
+|_    Form action: /browse.php
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+| http-enum: 
+|   /info.php: Possible information file
+|_  /phpinfo.php: Possible information file
+|_http-server-header: Apache/2.4.29 (FreeBSD) PHP/5.6.32
+| http-sql-injection: 
+|   Possible sqli for forms:
+|     Form at path: /, form's action: /browse.php. Fields that might be vulnerable:
+|_      file
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-trace: TRACE is enabled
+|_http-vuln-cve2017-1001000: ERROR: Script execution failed (use -d to debug)
+| vulners: 
+|   cpe:/a:apache:http_server:2.4.29: 
+|     	CVE-2019-0211	7.2	https://vulners.com/cve/CVE-2019-0211
+|     	CVE-2018-1312	6.8	https://vulners.com/cve/CVE-2018-1312
+|     	CVE-2017-15715	6.8	https://vulners.com/cve/CVE-2017-15715
+|     	CVE-2019-10082	6.4	https://vulners.com/cve/CVE-2019-10082
+|     	CVE-2019-0217	6.0	https://vulners.com/cve/CVE-2019-0217
+|     	CVE-2019-10098	5.8	https://vulners.com/cve/CVE-2019-10098
+|     	CVE-2019-10081	5.0	https://vulners.com/cve/CVE-2019-10081
+|     	CVE-2019-0220	5.0	https://vulners.com/cve/CVE-2019-0220
+|     	CVE-2019-0196	5.0	https://vulners.com/cve/CVE-2019-0196
+|     	CVE-2018-17199	5.0	https://vulners.com/cve/CVE-2018-17199
+|     	CVE-2018-1333	5.0	https://vulners.com/cve/CVE-2018-1333
+|     	CVE-2017-15710	5.0	https://vulners.com/cve/CVE-2017-15710
+|     	CVE-2019-0197	4.9	https://vulners.com/cve/CVE-2019-0197
+|     	CVE-2019-10092	4.3	https://vulners.com/cve/CVE-2019-10092
+|     	CVE-2018-11763	4.3	https://vulners.com/cve/CVE-2018-11763
+|_    	CVE-2018-1283	3.5	https://vulners.com/cve/CVE-2018-1283
+Service Info: OS: FreeBSD; CPE: cpe:/o:freebsd:freebsd
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Sat Nov 30 23:46:39 2019 -- 1 IP address (1 host up) scanned in 47.26 seconds
